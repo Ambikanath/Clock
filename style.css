@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;    
+    }
+    
+    .clock{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+       background: #000;
+       overflow: hidden;
+    }
+    
+    .wrapper{
+       position: relative;
+       width: 500px;
+       height: 500px;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       animation: colorful 30s linear infinite;
+    }
+    
+    @keyframes colorful {
+       100%{
+          filter: hue-rotate(360deg);
+       }
+    }
+    
+    .bar-seconds,
+    .number-hours{
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       border-radius: 50%;
+    }
+    
+    .bar-seconds span {
+       position: absolute;
+       transform: rotate(calc(var(--index) * 6deg));
+       inset: -20px;
+       text-align: center;
+    }
+    
+    .bar-seconds span p{
+       display: inline-block;
+       width: 2px;
+       height: 12px;
+       background: #0ef;
+       border-radius: 2px;
+       box-shadow: 0 0 10px #0ef;
+    }
+    
+    .bar-seconds span:nth-child(5n) p {
+       width: 6px;
+       height: 18px;
+       transform: translateY(1px);
+		background: red;
+		box-shadow: none;
+    }
+    
+    .number-hours span {
+       position: absolute;
+       transform: rotate(calc(var(--index) * 30deg));
+       inset:6px;
+       text-align: center;
+    }
+    
+    .number-hours span p {
+       font-size: 52px;
+       color: #0ef;
+       text-shadow: 0 0 10px #0ef;
+       transform: rotate(calc(var(--index) * -30deg));
+    }
+    
+    .hands-box {
+       position: relative;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+    
+    .hands-box .hand {
+       position: absolute;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+    }
+    
+    .hands-box .hand i {
+       display: inline-block;
+       transform-origin: bottom;
+       border-radius: 50%;
+       box-shadow: 0 0 10px #0ef;
+    }
+    
+    .hands-box .hours {
+       width: 320px;
+       height: 320px;
+    }
+    
+    .hands-box .hours i {
+       width: 8px;
+       height: 160px;
+       background: #0ef;
+       
+    }
+    
+    .hands-box .mins {
+       width: 450px;
+       height: 450px;
+    }
+    
+    .hands-box .mins::before {
+       content: "";
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+       width: 25px;
+       height: 25px;
+       background: #0ef;
+       border-radius: 50%;
+       box-shadow: 0 0 5px #0ef;
+    }
+    
+    .hands-box .mins i {
+       width: 8px;
+	   height: calc(225px + 20px);
+       background: #0ef;
+       
+    }
+    
+    .hands-box .sec {
+       width: 490px;
+       height: 490px;
+    }
+    
+    .hands-box .sec::before {
+       content: "";
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+       width: 20px;
+       height: 20px;
+       background: #fff;
+       border-radius: 50%;
+       box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+       }
+    
+    .hands-box .sec i {
+       width: 4px;
+       height: calc(245px + 70px);
+       background: white;
+       box-shadow: none;
+	}
+
+
+.moto {
+    position: absolute;
+	font-size: 100px;
+	text-align: center;
+	color: #00ff00;
+	text-shadow: 1px 1px 5px #0ef;
+	padding: 25px;
+	
+}
+
+.moto p{
+	animation: colorful 30s linear infinite;
+}
+
+
+
+
+@media only screen and (max-width: 600px){
+
+.wrapper{ 
+	width: 375px;
+    height: 375px;
+} 
+.hands-box .hours { 
+	width: 195px;
+	height: 195px;
+}
+.hands-box .hours i { 
+	width: 5px;
+	height: 97.5px; 
+}
+.hands-box .mins {
+	width: 325px; 
+	height: 325px;
+}
+.hands-box .mins i { 
+	width: 5px;
+	height: 162.5px;
+}
+.hands-box .sec {
+	width: 355px; 
+	height: 355px;
+}
+.hands-box .sec i { 
+	width: 2px;
+	height: calc(177.5px + 52px); 
+}
+}
