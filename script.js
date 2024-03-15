@@ -10,7 +10,7 @@ function getCurrentTime(){
 
    handHours.style.transform = `rotate(${currentHours * 30 + currentMinutes/2}deg)`;
    handMinutes.style.transform = `rotate(${currentMinutes * 6 + currentSeconds * 0.1}deg)`;
-   handSeconds.style.transform = `rotate(${6 + currentSeconds * 6}deg)`;
+   handSeconds.style.transform = `rotate(${currentSeconds * 6}deg)`;
 }
 
 getCurrentTime();
